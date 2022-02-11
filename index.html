@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="containerOuter">
+
+    <div class="appContainer">
+
+      <!-- Calculator on left side -->
+      <form class="calculator">
+        <div class="w-100">
+          <label for="inputBill" class="smallerHeadingLabels">Bill</label>
+          <div class="input-group mb-3">
+            <div class="d-flex flex-column">
+              <input type="number" min="0" class="form-control inputTextCenter" id="inputBill">
+              <span class="text-danger" id="inputBillErrorMessage" hidden="true">Enter a valid value !!!</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100">
+          <label for="tipValue" class="smallerHeadingLabels">Tip %</label>
+          <div class="input-group mb-3">
+            <button class="btn btn-outline-secondary" type="button" id="reduceTip">-</button>
+            <input type="number" min="0" max="100" class="form-control inputTextCenter" id="tipValue">
+            <button class="btn btn-outline-secondary" type="button" id="increaseTip">+</button>
+            <span class="text-danger" id="tipValueErrorMessage"  hidden="true">Enter a valid value !!!</span>
+          </div>
+        </div>
+
+        <div class="w-100">
+          <label for="peopleValue" class="smallerHeadingLabels">Number of people</label>
+          <div class="input-group mb-3">
+            <button class="btn btn-outline-secondary" type="button" id="reducePeople">-</button>
+            <input type="number" class="form-control inputTextCenter" id="peopleValue" min="0">
+            <button class="btn btn-outline-secondary" type="button" id="increasePeople">+</button>
+          </div>
+          <span class="text-danger" id="peopleValueErrorMessage" hidden="true">Enter a valid value !!!</span>
+        </div>
+      </form>
+
+      <!-- Output div on Right side -->
+      <div class="outputDiv d-flex flex-column justify-content-around">
+        <div class="d-flex">
+          <div class="showTip d-flex flex-column">
+            <label class="outputLabels">
+              Tip
+            </label>
+            <label class="smallerHeadingLabels">per person</label>
+          </div>
+          <div class="fs-1 billOutput">
+            <label id="calculatedTipAmount"></label>
+          </div>
+        </div>
+
+        <div class="d-flex">
+          <div class="showTotal d-flex flex-column">
+            <label class="outputLabels">
+              Total
+            </label>
+            <label class="smallerHeadingLabels">per person</label>
+          </div>
+          <div class="fs-1 billOutput fw-bold">
+            <label id="calculatedFinalBill"></label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
